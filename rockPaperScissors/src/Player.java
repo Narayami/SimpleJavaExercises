@@ -9,4 +9,8 @@ public class Player {
     public String toString(){
         return nickName;
     }
+
+    public String getNickName() {
+        return nickName;
+    }
 }

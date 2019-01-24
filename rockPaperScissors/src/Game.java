@@ -33,21 +33,24 @@ public class Game {
     }
 
     private String getScissorsResult(Hand p1Hand, Hand p2Hand) {
-        System.out.println(Constant.PLAYERONE + playerOne + " played " + p1Hand);
-        System.out.println(Constant.PLAYERTWO + playerTwo + " played " + p2Hand);
-        return p2Hand == Hand.PAPER ? "P1 Wins" : p2Hand == Hand.ROCK ? "P2 Wins" : "Draw";
+        System.out.println(Constant.PLAYERONE + playerOne + Constant.PLAYED + p1Hand);
+        System.out.println(Constant.PLAYERTWO + playerTwo + Constant.PLAYED + p2Hand);
+        return p2Hand == Hand.PAPER ? playerOne.getNickName() + Constant.WINNER
+                : p2Hand == Hand.ROCK ? playerTwo.getNickName() + Constant.WINNER : Constant.DRAW;
     }
 
     private String getPaperResult(Hand p1Hand, Hand p2Hand) {
-        System.out.println(Constant.PLAYERONE + playerOne + " played " + p1Hand);
-        System.out.println(Constant.PLAYERTWO + playerTwo + " played " + p2Hand);
-        return p2Hand == Hand.ROCK ? "P1 Wins" : p2Hand == Hand.SCISSORS ? "P2 Wins" : "Draw";
+        System.out.println(Constant.PLAYERONE + playerOne + Constant.PLAYED + p1Hand);
+        System.out.println(Constant.PLAYERTWO + playerTwo + Constant.PLAYED + p2Hand);
+        return p2Hand == Hand.ROCK ? playerOne.getNickName() + Constant.WINNER
+                : p2Hand == Hand.SCISSORS ? playerTwo.getNickName() + Constant.WINNER : Constant.DRAW;
     }
 
     private String getRockResult(Hand p1Hand, Hand p2Hand) {
-        System.out.println(Constant.PLAYERONE + playerOne + " played " + p1Hand);
-        System.out.println(Constant.PLAYERTWO + playerTwo + " played " + p2Hand);
-        return p2Hand == Hand.SCISSORS ? "P1 Wins" : p2Hand == Hand.PAPER ? "P2 Wins" : "Draw";
+        System.out.println(Constant.PLAYERONE + playerOne + Constant.PLAYED + p1Hand);
+        System.out.println(Constant.PLAYERTWO + playerTwo + Constant.PLAYED + p2Hand);
+        return p2Hand == Hand.SCISSORS ? playerOne.getNickName() + Constant.WINNER
+                : p2Hand == Hand.PAPER ? playerTwo + Constant.WINNER : Constant.DRAW;
     }
 
     private Hand getHand() {
