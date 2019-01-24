@@ -8,8 +8,8 @@ public class Game {
     private String winner;
 
     public void init() {
-        playerOne = new Player("Mr.Robot");
-        playerTwo = new Player("Jessy");
+        playerOne = new Player(Constant.PLAYER_ONE_NAME);
+        playerTwo = new Player(Constant.PLAYER_TWO_NAME);
 
     }
 
