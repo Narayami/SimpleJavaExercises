@@ -3,8 +3,8 @@ public enum Hand {
     PAPER,
     SCISSORS;
 
-    public final Hand getRandomHand(){
+    public static Hand getRandomHand(){
         Hand[] hands = Hand.values();
-        return hands[(int)Math.random()* hands.length];
+        return hands[(int)Math.floor(Math.random()* hands.length)];
     }
 }

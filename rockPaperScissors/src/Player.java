@@ -5,4 +5,8 @@ public class Player {
         this.nickName = nickName;
 
     }
+    @Override
+    public String toString(){
+        return nickName;
+    }
 }
