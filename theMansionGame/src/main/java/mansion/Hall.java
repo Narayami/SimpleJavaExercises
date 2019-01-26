@@ -1,16 +1,16 @@
-package mansion;
+package mansion
 
-import objects.Door;
-import objects.Key;
+import objects.Door
+import objects.Key
 
-import java.util.HashMap;
+import java.util.HashMap
 
-public class Hall {
-    private HashMap<Door, Key> doors = new HashMap<Door, Key>();
+class Hall {
+    private val doors = HashMap<Door, Key>()
 
-    public void initHall(){
-        doors.put(new Door(1), new Key(1));
-        doors.put(new Door(2), new Key(2));
+    fun initHall() {
+        doors[Door(1)] = Key(1)
+        doors[Door(2)] = Key(2)
 
     }
 }

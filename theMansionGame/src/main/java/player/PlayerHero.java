@@ -1,10 +1,9 @@
-package player;
-import objects.Door;
-import objects.Key;
+package player
 
-public interface PlayerHero {
-    void open(Object door);
-    void pick(Object key);
-    void use(Object key);
+interface PlayerHero {
+    fun promptName()
+    fun open(door: Any)
+    fun pick(key: Any)
+    fun use(key: Any)
 
 }

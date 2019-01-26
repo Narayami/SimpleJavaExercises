@@ -1,8 +1,11 @@
-import mansion.Hall;
-import player.Hero;
+import mansion.Hall
+import player.Hero
 
-public class Main {
-    Hero link = new Hero();
-    Hall mansionHall = new Hall();
-
+object Main {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val hero = Hero()
+        val mansionHall = Hall()
+        hero.promptName()
+    }
 }

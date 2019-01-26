@@ -1,17 +1,26 @@
-package player;
+package player
 
-public class Hero implements PlayerHero {
-    private String name;
+import org.academiadecodigo.bootcamp.Prompt
+import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner
 
-    public void open(Object door) {
+class Hero : PlayerHero {
+    private val prompt = Prompt(System.`in`, System.out)
+    private val inputScanner = StringInputScanner()
+    override fun promptName() {
+        inputScanner.setMessage("Who are you, stranger?")
+        prompt.getUserInput(inputScanner)
+        println()
+    }
+
+    override fun open(door: Any) {
 
     }
 
-    public void pick(Object key) {
+    override fun pick(key: Any) {
 
     }
 
-    public void use(Object key) {
+    override fun use(key: Any) {
 
     }
 }
