@@ -1,5 +1,5 @@
 package objects;
 
 public interface Object {
-    void check();
+    void check(String name);
 }

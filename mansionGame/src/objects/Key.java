@@ -8,7 +8,7 @@ public class Key implements Object{
     }
 
     @Override
-    public void check() {
+    public void check(String keyName) {
 
     }
 }

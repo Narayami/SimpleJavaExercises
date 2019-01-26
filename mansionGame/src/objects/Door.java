@@ -1,13 +1,11 @@
 package objects;
 
-import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
-
 public class Door implements Object{
     private boolean isOpened = false;
-    private int number;
+    private String doorName;
 
-    public Door(int number, Boolean isOpened){
-        this.number =  number;
+    public Door(String doorName, Boolean isOpened){
+        this.doorName =  doorName;
     }
 
     public void setOpened(boolean opened) {
@@ -15,12 +13,12 @@ public class Door implements Object{
     }
 
     @Override
-    public void check() {
+    public void check(String doorName){
 
     }
 
     @Override
     public String toString(){
-        return "Room: "  + number;
+        return "Room: "  + doorName;
     }
 }
