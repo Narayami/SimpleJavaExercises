@@ -1,16 +1,20 @@
 package mansion;
 
 import objects.Door;
-import objects.Key;
 
-import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Hall {
-    private HashMap<Door, Key> doors = new HashMap<Door, Key>();
+    private List<Door> doors = new LinkedList<>();
 
     public void initHall(){
-        doors.put(new Door(1), new Key(1));
-        doors.put(new Door(2), new Key(2));
+        for (int i = 1; i < 5 ; i++) {
+            doors.add(new Door(i, false));
+        }
+    }
 
+    public void showRooms(){
+        System.out.println(doors);
     }
 }

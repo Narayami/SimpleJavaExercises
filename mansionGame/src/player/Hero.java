@@ -6,10 +6,10 @@ import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
 public class Hero implements PlayerHero {
     private Prompt prompt = new Prompt(System.in, System.out);
     private StringInputScanner inputScanner = new StringInputScanner();
+
     public void promptName() {
-        inputScanner.setMessage("Who are you, stranger?");
+        inputScanner.setMessage("Who are you, stranger?\n");
         prompt.getUserInput(inputScanner);
-        System.out.println();
     }
 
     public void open(Object door) {
