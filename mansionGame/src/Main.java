@@ -8,6 +8,11 @@ public class Main {
 
         Hall mansionHall = new Hall();
         mansionHall.initHall();
+
+
+
+        //Showing results
         mansionHall.showRooms();
+        mansionHall.showPaintings();
     }
 }

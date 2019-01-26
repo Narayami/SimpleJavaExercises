@@ -19,6 +19,6 @@ public class Door implements Object{
 
     @Override
     public String toString(){
-        return "Room: "  + doorName;
+        return doorName;
     }
 }
