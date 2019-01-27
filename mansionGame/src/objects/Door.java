@@ -8,14 +8,31 @@ public class Door implements Object{
         this.doorName =  doorName;
     }
 
+    @Override
+    public void open(int number){
+        switch (number) {
+            case 1:
+
+                System.out.println("1");
+                break;
+            case 2:
+                System.out.println("2");
+                break;
+            case 3:
+                System.out.println("3");
+                break;
+            case 4:
+                System.out.println("4");
+        }
+
+    }
+
     public void setOpened(boolean opened) {
         isOpened = opened;
     }
 
-    @Override
-    public void check(){
-
-
+    public boolean isOpened() {
+        return isOpened;
     }
 
     @Override

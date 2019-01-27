@@ -14,7 +14,7 @@ public class Painting implements Object {
     }
 
     @Override
-    public void check() {
+    public void open(int number) {
 
     }
 
