@@ -1,8 +1,9 @@
 package mansion;
 
+import finals.Constant;
+import finals.Wait;
 import objects.Door;
 import objects.Painting;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,6 +28,12 @@ public class Hall {
     public void initHall() {
         createDoors();
         createPaintings();
+    }
+
+    public void startHallLevel(String playerName){
+        System.out.println(Constant.Good_Luck + playerName);
+        Wait.seconds(2);
+
     }
 
     private void createPaintings() {
