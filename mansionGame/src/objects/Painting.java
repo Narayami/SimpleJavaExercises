@@ -14,7 +14,7 @@ public class Painting implements Object {
     }
 
     @Override
-    public void check(String paintName) {
+    public void check() {
 
     }
 

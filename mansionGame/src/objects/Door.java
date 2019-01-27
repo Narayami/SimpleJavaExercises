@@ -13,7 +13,8 @@ public class Door implements Object{
     }
 
     @Override
-    public void check(String doorName){
+    public void check(){
+
 
     }
 
