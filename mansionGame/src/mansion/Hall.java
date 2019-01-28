@@ -10,6 +10,7 @@ import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
 import java.util.LinkedList;
 import java.util.List;
 
+//TODO - clean/refactor code
 public class Hall {
     private List<Door> doors = new LinkedList<>();
     private List<Painting> paintings = new LinkedList<>();
@@ -30,6 +31,7 @@ public class Hall {
     private Prompt prompt = new Prompt(System.in, System.out);
     private String[] hallOptions = {"See Doors", "See Paintings", "Suicide"};
     private String[] doorOptions = {"Open", "Check", "Return"};
+    private String[] doorsListSelection = {"Kitchen", "Living Room", "Bathroom", "Gaming Room", "Return"};
     private MenuInputScanner menuInputScanner;
 
     private boolean levelSolved = false;
@@ -40,9 +42,8 @@ public class Hall {
         createPaintings();
     }
 
-    public void startHallLevel(String playerName) {
-        System.out.println(Constant.Good_Luck + playerName);
-        Wait.seconds(2);
+    public void startHallLevel() {
+        //Wait.seconds(1);
 
         int selectedHallOption = getHallOption();
 
@@ -55,25 +56,34 @@ public class Hall {
                     getPaintingOptions();
                     break;
                 case 3:
-                    System.out.println("YOU FUCKING PUSSY!");
+                    System.out.println(Constant.YOU_FUCKING_PUSSY);
                     System.exit(0);
                     break;
             }
         }
     }
 
-    private void getDoorOptions() {
-        menuInputScanner = new MenuInputScanner(doorsName);
-        menuInputScanner.setMessage("Which painting you want to check?");
-        int doorChosen = prompt.getUserInput(menuInputScanner);
+    private int getHallOption() {
+        menuInputScanner = new MenuInputScanner(hallOptions);
+        menuInputScanner.setMessage(Constant.WHAT_TO_DO);
+        return prompt.getUserInput(menuInputScanner);
 
+    }
+
+    private void getDoorOptions() {
+        menuInputScanner = new MenuInputScanner(doorsListSelection);
+        menuInputScanner.setMessage(Constant.DOOR_TO_SELECT);
+        int doorChosen = prompt.getUserInput(menuInputScanner);
+        if (doorChosen == 5){
+            startHallLevel();
+        }
         doorOption(doorChosen);
 
     }
 
     private void doorOption(int doorChosen) {
         menuInputScanner = new MenuInputScanner(doorOptions);
-        menuInputScanner.setMessage("What do you want to do?");
+        menuInputScanner.setMessage(Constant.WHAT_TO_DO);
         int playerOption = prompt.getUserInput(menuInputScanner);
         switch (playerOption) {
             case 1:
@@ -89,7 +99,6 @@ public class Hall {
             case 3:
                 getDoorOptions();
         }
-        getHallOption();
     }
 
     private String doorsCheckMessage(int playerOption) {
@@ -102,15 +111,8 @@ public class Hall {
 
     private void getPaintingOptions() {
         menuInputScanner = new MenuInputScanner(paintingsName);
-        menuInputScanner.setMessage("Which paintings you want to check?");
+        menuInputScanner.setMessage(Constant.PAINTING_TO_SELECT);
         int playerOption = prompt.getUserInput(menuInputScanner);
-
-    }
-
-    private int getHallOption() {
-        menuInputScanner = new MenuInputScanner(hallOptions);
-        menuInputScanner.setMessage("What do you want to do?");
-        return prompt.getUserInput(menuInputScanner);
 
     }
 
@@ -127,6 +129,7 @@ public class Hall {
     }
 
     private void nextLevel() {
+        //TODO
         System.out.println("testing");
     }
 

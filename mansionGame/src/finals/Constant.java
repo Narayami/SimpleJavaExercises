@@ -9,4 +9,9 @@ public final class Constant {
             "int the other side";
     public static final String DOOR_FOUR_MESSAGE = "A door with a video game character poster in it, " +
             "blood is coming from the other side";
+    public static final String DOOR_TO_SELECT = "Which door do you want to see?";
+    public static final String WHAT_TO_DO = "What do you want do do?";
+    public static final String PAINTING_TO_SELECT = "Which painting do you want to see?";
+    public static final String YOU_FUCKING_PUSSY = "YOU FUCKING PUSSY";
+    public static final String WHO_ARE_YOU = "Who are you?";
 }
