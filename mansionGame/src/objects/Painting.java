@@ -13,6 +13,10 @@ public class Painting implements Object {
         this.solved = solved;
     }
 
+    public boolean getSolved(){
+        return this.solved;
+    }
+
     @Override
     public void open(int number) {
 
