@@ -50,9 +50,6 @@ public class Hall {
         //Wait.seconds(1);
 
         int selectedHallOption = getHallOption();
-        if (levelSolved) {
-            System.out.println("testing startHall - levelSolved = true");
-        }
         while (!levelSolved) {
             switch (selectedHallOption) {
                 case 1:
@@ -82,6 +79,7 @@ public class Hall {
         int doorChosen = prompt.getUserInput(menuInputScanner);
         if (doorChosen == 5) {
             startHallLevel();
+            return;
         }
         doorOption(doorChosen);
 
@@ -122,11 +120,14 @@ public class Hall {
 
         if (playerOption == 5) {
             startHallLevel();
+            return;
         }
+
 
         if (paintings.get(playerOption - 1).isSolved()) {
             System.out.println(Constant.ALREADY_SOLVED);
-            getPaintingOptions();
+            startHallLevel();
+            return;
         }
 
         paintingRiddleOption(playerOption);
@@ -134,8 +135,6 @@ public class Hall {
     }
 
     private void paintingRiddleOption(int playerOption) {
-
-
         switch (playerOption) {
             case 1:
                 System.out.println(Constant.PAINTING_ONE_RIDDLE);
@@ -166,8 +165,10 @@ public class Hall {
         switch (playerPaintingOption) {
             case 1:
                 resolvePaintingRiddle(playerOption);
+                break;
             case 2:
                 getPaintingOptions();
+                break;
         }
     }
 
@@ -177,9 +178,12 @@ public class Hall {
         String playerAnswer = prompt.getUserInput(inputScanner);
 
         if (checkAnswer(playerOption, playerAnswer)) {
-            paintings.get(playerOption).setSolved(true);
+            paintings.get(playerOption - 1).setSolved(true);
             System.out.println(Constant.CORRECT_ANSWER);
             levelSolved = checkHallPuzzleStatus();
+            if (levelSolved){
+                nextLevel();
+            }
         } else {
             System.out.println(Constant.WRONG_ANSWER);
         }
