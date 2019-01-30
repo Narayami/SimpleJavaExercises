@@ -1,29 +1,12 @@
 package objects;
 
-public class Door implements Object{
+public class Door implements Object {
     private boolean isOpened = false;
     private String doorName;
 
-    public Door(String doorName, Boolean isOpened){
-        this.doorName =  doorName;
-    }
-
-    @Override
-    public void open(int number){
-        switch (number) {
-            case 1:
-                System.out.println("1");
-                break;
-            case 2:
-                System.out.println("2");
-                break;
-            case 3:
-                System.out.println("3");
-                break;
-            case 4:
-                System.out.println("4");
-        }
-
+    public Door(String doorName, Boolean isOpened) {
+        this.doorName = doorName;
+        this.isOpened = isOpened;
     }
 
     public void setOpened(boolean opened) {
@@ -35,7 +18,7 @@ public class Door implements Object{
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return doorName;
     }
 }

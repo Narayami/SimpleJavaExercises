@@ -35,6 +35,7 @@ public final class Constant {
     public static final String PAINTING_THREE_ANSWER = "jack the ripper";
     public static final String PAINTING_FOUR_ANSWER = "Inside Out";
     public static final String WRONG_ANSWER = "Wrong answer!";
+    public static final String CORRECT_ANSWER = "Correct!";
     public static final String ALREADY_SOLVED = "Already Solved!";
 
     public static final String HALL_LEVEL_CLEARED = "All paintings resolved!";

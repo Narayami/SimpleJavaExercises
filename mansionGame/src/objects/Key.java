@@ -7,8 +7,4 @@ public class Key implements Object{
         this.number = number;
     }
 
-    @Override
-    public void open(Door door) {
-
-    }
 }

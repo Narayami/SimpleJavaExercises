@@ -12,10 +12,5 @@ public class Main {
         Hero hero = new Hero(mansionHall);
         hero.promptName();
 
-
-        //Showing results
-        System.out.println("\n-------------------------------");
-        mansionHall.showRooms();
-        mansionHall.showPaintings();
     }
 }

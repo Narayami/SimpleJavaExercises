@@ -6,7 +6,7 @@ import mansion.Hall;
 import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
 //TODO - REFACTOR CODE - INTERFACE TO MAKE PLAYER OPEN DOORS AND GRAB ITEMS, ETC
-public class Hero {
+public class Hero implements PlayerHero{
     private Prompt prompt = new Prompt(System.in, System.out);
     private StringInputScanner inputScanner = new StringInputScanner();
     private Hall hall;

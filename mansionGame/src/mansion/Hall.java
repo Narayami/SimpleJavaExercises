@@ -50,7 +50,7 @@ public class Hall {
         //Wait.seconds(1);
 
         int selectedHallOption = getHallOption();
-        if (levelSolved){
+        if (levelSolved) {
             System.out.println("testing startHall - levelSolved = true");
         }
         while (!levelSolved) {
@@ -93,7 +93,7 @@ public class Hall {
         int playerOption = prompt.getUserInput(menuInputScanner);
         switch (playerOption) {
             case 1:
-                if (doors.get(doorChosen).isOpened()) {
+                if (doors.get(doorChosen - 1).isOpened()) {
                     nextLevel();
                 } else {
                     System.out.println(Constant.DOOR_IS_CLOSED);
@@ -124,9 +124,9 @@ public class Hall {
             startHallLevel();
         }
 
-        if (!paintings.get(playerOption).getSolved()) {
+        if (paintings.get(playerOption - 1).isSolved()) {
             System.out.println(Constant.ALREADY_SOLVED);
-            startHallLevel();
+            getPaintingOptions();
         }
 
         paintingRiddleOption(playerOption);
@@ -178,22 +178,24 @@ public class Hall {
 
         if (checkAnswer(playerOption, playerAnswer)) {
             paintings.get(playerOption).setSolved(true);
+            System.out.println(Constant.CORRECT_ANSWER);
             levelSolved = checkHallPuzzleStatus();
+        } else {
+            System.out.println(Constant.WRONG_ANSWER);
         }
-        System.out.println(Constant.WRONG_ANSWER);
     }
 
     private boolean checkAnswer(int playerOption, String playerAnswer) {
-        if (playerOption == 1 && playerAnswer == Constant.PAINTING_ONE_ANSWER) {
+        if (playerOption == 1 && playerAnswer.equals(Constant.PAINTING_ONE_ANSWER)) {
             return true;
         }
-        if (playerOption == 2 && playerAnswer == Constant.PAINTING_TWO_ANSWER) {
+        if (playerOption == 2 && playerAnswer.equals(Constant.PAINTING_TWO_ANSWER)) {
             return true;
         }
-        if (playerOption == 3 && playerAnswer == Constant.PAINTING_THREE_ANSWER) {
+        if (playerOption == 3 && playerAnswer.equals(Constant.PAINTING_THREE_ANSWER)) {
             return true;
         }
-        if (playerOption == 4 && playerAnswer == Constant.PAINTING_FOUR_ANSWER) {
+        if (playerOption == 4 && playerAnswer.equals(Constant.PAINTING_FOUR_ANSWER)) {
             return true;
         }
 
@@ -201,8 +203,8 @@ public class Hall {
     }
 
     private boolean checkHallPuzzleStatus() {
-        for (Painting p: paintings) {
-            if (!p.getSolved()){
+        for (Painting p : paintings) {
+            if (!p.isSolved()) {
                 return false;
             }
         }
@@ -240,13 +242,5 @@ public class Hall {
     private void nextLevel() {
         //TODO
         System.out.println("testing");
-    }
-
-    public void showRooms() {
-        System.out.println(doors);
-    }
-
-    public void showPaintings() {
-        System.out.println(paintings);
     }
 }
