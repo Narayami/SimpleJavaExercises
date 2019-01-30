@@ -8,7 +8,7 @@ public class Key implements Object{
     }
 
     @Override
-    public void open(int number) {
+    public void open(Door door) {
 
     }
 }

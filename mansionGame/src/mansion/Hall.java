@@ -10,7 +10,7 @@ import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
 import java.util.LinkedList;
 import java.util.List;
 
-//TODO - clean/refactor code
+//TODO - clean/refactor code, make player lose and enemy fights
 public class Hall {
     private List<Door> doors = new LinkedList<>();
     private List<Painting> paintings = new LinkedList<>();
